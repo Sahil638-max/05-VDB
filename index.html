@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Vaidehi ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Segoe UI,sans-serif;
+text-align:center;
+background:linear-gradient(120deg,#ff758c,#ff7eb3,#ff4d6d);
+color:white;
+height:100vh;
+overflow:hidden;
+}
+
+h1{
+font-size:50px;
+margin-top:40px;
+animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px white;}
+to{text-shadow:0 0 35px yellow;}
+}
+
+.message{
+font-size:22px;
+width:70%;
+margin:auto;
+}
+
+.candles{
+font-size:45px;
+cursor:pointer;
+margin-top:20px;
+}
+
+.cake{
+font-size:120px;
+cursor:pointer;
+margin-top:20px;
+transition:0.6s;
+}
+
+.cut{
+transform:scale(1.2) rotate(-10deg);
+}
+
+.slice{
+display:none;
+font-size:110px;
+}
+
+.show{
+display:block;
+}
+
+.balloon, .heart{
+position:absolute;
+bottom:-50px;
+font-size:35px;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-110vh);}
+}
+
+.slideshow{
+position:absolute;
+bottom:20px;
+width:100%;
+}
+
+.slideshow img{
+height:120px;
+border-radius:15px;
+margin:5px;
+box-shadow:0 0 10px white;
+}
+
+.firework{
+position:absolute;
+font-size:40px;
+animation:explode 1s ease-out forwards;
+}
+
+@keyframes explode{
+0%{transform:scale(0);}
+100%{transform:scale(2); opacity:0;}
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Happy Birthday Vaidehi ❤️</h1>
+
+<p class="message">
+Vaidehi, you are my happiness, my peace, and the most beautiful part of my life.  
+Today the world celebrates you, and so does my heart.  
+Blow the candles, make a wish, and cut the cake 🎂
+</p>
+
+<div id="candles" class="candles">🕯️🕯️🕯️</div>
+<p>Click candles to blow them 💨</p>
+
+<div id="cake" class="cake">🎂</div>
+<div id="slice" class="slice">🍰</div>
+
+<div class="slideshow">
+<img src="https://picsum.photos/200?1">
+<img src="https://picsum.photos/200?2">
+<img src="https://picsum.photos/200?3">
+</div>
+
+<audio autoplay loop>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+</audio>
+
+<script>
+
+let candles=document.getElementById("candles");
+let cake=document.getElementById("cake");
+let slice=document.getElementById("slice");
+
+candles.onclick=function(){
+candles.innerHTML="💨";
+alert("Candles blown! Make a wish Vaidehi ❤️");
+}
+
+cake.onclick=function(){
+
+cake.classList.add("cut");
+slice.classList.add("show");
+
+for(let i=0;i<15;i++){
+createFirework();
+}
+
+setTimeout(()=>{
+alert("Cake Cut! Happy Birthday Vaidehi ❤️ I Love You!");
+},700);
+
+}
+
+function createBalloon(){
+
+let b=document.createElement("div");
+b.className="balloon";
+b.innerHTML="🎈";
+b.style.left=Math.random()*100+"vw";
+b.style.animationDuration=6+Math.random()*4+"s";
+
+document.body.appendChild(b);
+
+setTimeout(()=>{b.remove();},9000);
+}
+
+function createHeart(){
+
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="💖";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=6+Math.random()*4+"s";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{h.remove();},9000);
+}
+
+function createFirework(){
+
+let f=document.createElement("div");
+f.className="firework";
+f.innerHTML="🎆";
+f.style.left=Math.random()*100+"vw";
+f.style.top=Math.random()*60+"vh";
+
+document.body.appendChild(f);
+
+setTimeout(()=>{f.remove();},1000);
+}
+
+setInterval(createBalloon,900);
+setInterval(createHeart,700);
+
+</script>
+
+</body>
+</html>
