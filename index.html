@@ -67,13 +67,19 @@ p{font-size:20px;line-height:1.6;}
 /* Pizza & Waffles */
 .food{font-size:60px;animation:bounce 1s infinite alternate;}
 @keyframes bounce{0%{transform:translateY(0);}100%{transform:translateY(-20px);}}
+
+.cake{font-size:120px;cursor:pointer;transition:0.5s;}
+.cake.cut{transform:scale(1.2) rotate(-10deg);}
+.slice{display:none;font-size:100px;}
+.show{display:block;}
+.candles{font-size:50px;cursor:pointer;margin-bottom:20px;}
 </style>
 </head>
 <body>
 
-<!-- Tu Chahiye Song -->
+<!-- Tu Chahiye Song (main part starts ~0:52) -->
 <iframe width="0" height="0" 
-src="https://www.youtube.com/embed/x3nef28?autoplay=1&start=30&loop=1&playlist=x3nef28"
+src="https://www.youtube.com/embed/CtCZuLsqKyg?autoplay=1&start=52&loop=1&playlist=CtCZuLsqKyg"
 frameborder="0" allow="autoplay"></iframe>
 
 <!-- Slide 1 -->
@@ -83,14 +89,24 @@ frameborder="0" allow="autoplay"></iframe>
 <button class="btn" onclick="next()">Next ➜</button>
 </div></div>
 
-<!-- Slide 2 -->
+<!-- Slide 2: Candle -->
 <div class="slide"><div class="card">
-<h1>You Are My Happiness 💞</h1>
-<p id="text2"></p>
+<h1>Blow the Candles 🕯️💨</h1>
+<p>Click the candles and make your wish ❤️</p>
+<div id="candles" class="candles">🕯️🕯️🕯️</div>
 <button class="btn" onclick="next()">Next ➜</button>
 </div></div>
 
-<!-- Slide 3 -->
+<!-- Slide 3: Cake -->
+<div class="slide"><div class="card">
+<h1>Cut the Cake 🎂</h1>
+<p>Click the cake to celebrate ❤️</p>
+<div id="cake" class="cake">🎂</div>
+<div id="slice" class="slice">🍰</div>
+<button class="btn" onclick="next()">Next ➜</button>
+</div></div>
+
+<!-- Slide 4: Pizza & Waffles -->
 <div class="slide"><div class="card">
 <h1>Pizza & Waffles 🍕🧇</h1>
 <p id="text3"></p>
@@ -98,21 +114,21 @@ frameborder="0" allow="autoplay"></iframe>
 <button class="btn" onclick="next()">Next ➜</button>
 </div></div>
 
-<!-- Slide 4 -->
+<!-- Slide 5: Promises -->
 <div class="slide"><div class="card">
 <h1>My Promises 💍</h1>
 <p id="text4"></p>
 <button class="btn" onclick="next()">Next ➜</button>
 </div></div>
 
-<!-- Slide 5 -->
+<!-- Slide 6: Always There -->
 <div class="slide"><div class="card">
 <h1>Always There 🫂</h1>
 <p id="text5"></p>
 <button class="btn" onclick="next()">Next ➜</button>
 </div></div>
 
-<!-- Slide 6 -->
+<!-- Slide 7: I Love You -->
 <div class="slide"><div class="card">
 <h1 class="glow">I Love You ❤️</h1>
 <p id="text6"></p>
@@ -121,7 +137,6 @@ frameborder="0" allow="autoplay"></iframe>
 <script>
 let slides=document.querySelectorAll(".slide");
 let index=0;
-
 function next(){
   slides[index].classList.remove("active");
   index++;
@@ -131,6 +146,7 @@ function next(){
   }
 }
 
+/* Typing effect */
 function typeText(id,text){
   let el=document.getElementById(id);
   if(!el) return;
@@ -142,21 +158,21 @@ function typeText(id,text){
   },35);
 }
 
+/* Messages */
 let texts=[
 "Every day your smile makes my heart overflow… you make me the happiest person in the world ❤️",
-"I am the luckiest just because you exist and love me 💖",
+"", // candle slide: no typing needed
+"", // cake slide: no typing
 "Our moments… pizza nights, waffle mornings, laughter, love… are my treasures 🍕🧇💞",
 "I promise to always be there for you, support you, care for you, and hold your hand through everything 💍",
 "No matter what happens, I will always be there for you every time you need me 🫂❤️",
 "You are my everything. I love you Vaidehi ♾️❤️"
 ];
 
-function startTyping(i){
-  if(texts[i]) typeText("text"+(i+1),texts[i]);
-}
+function startTyping(i){ if(texts[i]) typeText("text"+(i+1),texts[i]); }
 startTyping(0);
 
-/* Floating Hearts */
+/* Floating hearts */
 setInterval(()=>{
   let h=document.createElement("div");
   h.className="heart";
@@ -167,6 +183,15 @@ setInterval(()=>{
 },300);
 
 /* Fireworks */
+function createFirework(){
+  let f=document.createElement("div");
+  f.className="firework";
+  f.innerHTML="🎆";
+  f.style.left=Math.random()*100+"vw";
+  f.style.top=Math.random()*60+"vh";
+  document.body.appendChild(f);
+  setTimeout(()=>f.remove(),1000);
+}
 setInterval(()=>{
   let f=document.createElement("div");
   f.className="firework";
@@ -177,6 +202,20 @@ setInterval(()=>{
   document.body.appendChild(f);
   setTimeout(()=>f.remove(),1200);
 },400);
+
+/* Candles click */
+document.getElementById("candles").onclick=function(){
+  this.innerHTML="💨";
+  alert("Candles blown! Make a wish Vaidehi ❤️");
+}
+
+/* Cake click */
+document.getElementById("cake").onclick=function(){
+  this.classList.add("cut");
+  document.getElementById("slice").classList.add("show");
+  for(let i=0;i<20;i++){ createFirework(); }
+  setTimeout(()=>{ alert("Cake Cut! Happy Birthday Vaidehi ❤️"); },700);
+}
 </script>
 </body>
 </html>
