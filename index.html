@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>For Vaidehi ❤️</title>
+
 <style>
 body{
 margin:0;
@@ -13,46 +14,71 @@ text-align:center;
 overflow:hidden;
 }
 
-/* Slides */
 .slide{display:none;height:100vh;padding-top:60px;animation:fade 1s;}
 .active{display:block;}
 @keyframes fade{from{opacity:0;}to{opacity:1;}}
 
-/* Text */
-h1{font-size:45px;}
-p{font-size:22px;width:70%;margin:auto;min-height:60px;}
+h1{font-size:42px;}
+p{font-size:22px;width:70%;margin:auto;min-height:70px;}
 
-/* Button */
-.btn{margin-top:30px;padding:12px 25px;border:none;border-radius:25px;background:white;color:#ff4d6d;font-size:18px;cursor:pointer;}
-.emoji{font-size:90px;margin-top:20px;}
-
-/* Floating hearts with name */
-.heart{position:absolute;bottom:-20px;font-size:25px;animation:float 6s linear infinite;}
-@keyframes float{0%{transform:translateY(0);}100%{transform:translateY(-110vh);}}
-
-/* Candles & cake */
-.candles{font-size:45px;cursor:pointer;margin-top:20px;}
-.cake{font-size:120px;cursor:pointer;margin-top:20px;transition:0.6s;}
-.cut{transform:scale(1.2) rotate(-10deg);}
-.slice{display:none;font-size:110px;}
-.show{display:block;}
-
-/* Glow */
-.glow{animation:glow 1.5s infinite alternate;}
-@keyframes glow{from{text-shadow:0 0 10px white;}to{text-shadow:0 0 30px yellow;}
+.btn{
+margin-top:30px;
+padding:12px 25px;
+border:none;
+border-radius:25px;
+background:white;
+color:#ff4d6d;
+font-size:18px;
+cursor:pointer;
 }
 
-/* Fireworks emoji */
-.firework{position:absolute;font-size:40px;}
+.emoji{font-size:85px;margin-top:20px;}
+
+.heart{
+position:absolute;
+bottom:-20px;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-110vh);}
+}
+
+.glow{
+animation:glow 1.5s infinite alternate;
+}
+@keyframes glow{
+from{text-shadow:0 0 10px white;}
+to{text-shadow:0 0 30px yellow;}
+}
+
+/* Fireworks */
+.firework{
+position:absolute;
+font-size:35px;
+animation:boom 1s ease-out;
+}
+@keyframes boom{
+0%{transform:scale(0);}
+100%{transform:scale(1.5);opacity:0;}
+}
+
+/* Cake */
+.cake{font-size:120px;cursor:pointer;}
+.slice{display:none;font-size:100px;}
+.show{display:block;}
+
 </style>
 </head>
+
 <body>
 
-<!-- Music Player -->
+<!-- Romantic Music -->
 <audio id="bgMusic" autoplay loop>
-<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">
 </audio>
-<button class="btn" onclick="toggleMusic()">Pause/Play Music 🎵</button>
+<button class="btn" onclick="toggleMusic()">🎵 Music</button>
 
 <!-- Slide 1 -->
 <div class="slide active">
@@ -64,37 +90,62 @@ p{font-size:22px;width:70%;margin:auto;min-height:60px;}
 
 <!-- Slide 2 -->
 <div class="slide">
-<h1>You = My World 🌍</h1>
+<h1>You Are My Everything 💞</h1>
 <p id="text2"></p>
-<div class="emoji">💞😊</div>
+<div class="emoji">😊💖</div>
 <button class="btn" onclick="next()">Next ➜</button>
 </div>
 
-<!-- Slide 3 - Candles -->
+<!-- Slide 3 -->
 <div class="slide">
-<h1>Blow the Candles 🕯️💨</h1>
-<p>Click the candles to make a wish!</p>
-<div id="candles" class="candles">🕯️🕯️🕯️</div>
+<h1>My Favorite Person 🌍</h1>
+<p id="text3"></p>
+<div class="emoji">🌍❤️</div>
 <button class="btn" onclick="next()">Next ➜</button>
 </div>
 
-<!-- Slide 4 - Cake -->
+<!-- Slide 4 Candles -->
 <div class="slide">
-<h1>Cut the Cake 🎂🍰</h1>
-<p>Click the cake to cut it!</p>
+<h1>Make a Wish 🕯️</h1>
+<p>Click to blow candles 💨</p>
+<div id="candles" class="emoji">🕯️🕯️🕯️</div>
+<button class="btn" onclick="next()">Next ➜</button>
+</div>
+
+<!-- Slide 5 Cake -->
+<div class="slide">
+<h1>Cut the Cake 🎂</h1>
+<p>Click the cake ❤️</p>
 <div id="cake" class="cake">🎂</div>
 <div id="slice" class="slice">🍰</div>
 <button class="btn" onclick="next()">Next ➜</button>
 </div>
 
-<!-- Slide 5 - Pizza & Waffles -->
+<!-- Slide 6 Memories -->
 <div class="slide">
-<h1>Pizza & Waffles 🍕🧇</h1>
-<p id="text5"></p>
-<div class="emoji">🍕🧇💖</div>
+<h1>Us Together 💕</h1>
+<p id="text6"></p>
+<div class="emoji">🍕🧇💞</div>
+<button class="btn" onclick="next()">Next ➜</button>
+</div>
+
+<!-- Slide 7 Promises -->
+<div class="slide">
+<h1>My Promises 💍</h1>
+<p id="text7"></p>
+<div class="emoji">🤞❤️</div>
+<button class="btn" onclick="next()">Next ➜</button>
+</div>
+
+<!-- Slide 8 Final -->
+<div class="slide">
+<h1 class="glow">Forever Yours ❤️</h1>
+<p id="text8"></p>
+<div class="emoji">💖♾️</div>
 </div>
 
 <script>
+
 let slides=document.querySelectorAll(".slide");
 let index=0;
 
@@ -104,51 +155,58 @@ index++;
 if(index<slides.length){
 slides[index].classList.add("active");
 startTyping(index);
+if(index>=4) startFireworks();
 }
 }
 
-/* Typing Effect */
-function typeText(id,text,speed=40){
+/* Typing */
+function typeText(id,text){
 let el=document.getElementById(id);
 let i=0;el.innerHTML="";
-let interval=setInterval(()=>{el.innerHTML+=text.charAt(i);i++;if(i>=text.length) clearInterval(interval);},speed);
+let interval=setInterval(()=>{
+el.innerHTML+=text.charAt(i);
+i++;
+if(i>=text.length) clearInterval(interval);
+},40);
 }
 
 /* Messages */
 let texts=[
-"Today is the day my favorite person was born... and my world became brighter because of you ❤️",
-"You are my peace, my smile, my everything 💖",
-"Blow the candles and make your birthday wish! 🕯️💨",
-"Now cut the cake and enjoy your special day 🎂🍰",
-"Imagine us together eating pizza 🍕 and waffles 🧇… life with you is always sweet 💞\n\nI LOVE YOU VAIDEHI ❤️"
+"Today is the day my favorite person came into this world… and my life became beautiful because of you ❤️",
+"You are not just special… you are my happiness, my peace, my home 💖",
+"Every moment with you feels like a dream I never want to wake up from 🌍❤️",
+"",
+"",
+"Imagine us together… eating pizza 🍕, waffles 🧇, laughing endlessly 💞",
+"I promise to stay with you, support you, love you in every moment… no matter what 💍❤️",
+"I LOVE YOU VAIDEHI ❤️\nForever and always… ♾️"
 ];
-function startTyping(i){if(i<=4) typeText("text"+(i+1),texts[i]);}
+
+function startTyping(i){
+if(texts[i]) typeText("text"+(i+1),texts[i]);
+}
 startTyping(0);
 
-/* Floating Hearts with Name */
-function createHeart(){
+/* Hearts */
+setInterval(()=>{
 let h=document.createElement("div");
 h.className="heart";
 h.innerHTML="💖 Vaidehi 💖";
 h.style.left=Math.random()*100+"vw";
-h.style.animationDuration=4+Math.random()*3+"s";
 document.body.appendChild(h);
-setTimeout(()=>{h.remove();},6000);
+setTimeout(()=>h.remove(),6000);
+},400);
+
+/* Candles */
+document.getElementById("candles").onclick=function(){
+this.innerHTML="💨";
+alert("Wish made ❤️");
 }
-setInterval(createHeart,500);
 
-/* Candles interaction */
-let candles=document.getElementById("candles");
-candles.onclick=function(){candles.innerHTML="💨";alert("Candles blown! Make a wish Vaidehi ❤️");}
-
-/* Cake interaction */
-let cake=document.getElementById("cake");
-let slice=document.getElementById("slice");
-cake.onclick=function(){
-cake.classList.add("cut");
-slice.classList.add("show");
-for(let i=0;i<15;i++){createFirework();}
-setTimeout(()=>{alert("Cake Cut! Happy Birthday Vaidehi ❤️ I Love You!");},700);
+/* Cake */
+document.getElementById("cake").onclick=function(){
+document.getElementById("slice").classList.add("show");
+for(let i=0;i<20;i++) createFirework();
 }
 
 /* Fireworks */
@@ -157,16 +215,21 @@ let f=document.createElement("div");
 f.className="firework";
 f.innerHTML="🎆";
 f.style.left=Math.random()*100+"vw";
-f.style.top=Math.random()*60+"vh";
+f.style.top=Math.random()*80+"vh";
 document.body.appendChild(f);
-setTimeout(()=>{f.remove();},1000);
+setTimeout(()=>f.remove(),1000);
 }
 
-/* Music toggle */
-function toggleMusic(){
-let music=document.getElementById("bgMusic");
-if(music.paused){music.play();}else{music.pause();}
+function startFireworks(){
+setInterval(createFirework,300);
 }
+
+/* Music */
+function toggleMusic(){
+let m=document.getElementById("bgMusic");
+m.paused?m.play():m.pause();
+}
+
 </script>
 </body>
 </html>
