@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF‑8">
 <title>For Vaidehi ❤️</title>
 
 <style>
@@ -14,7 +14,7 @@ text-align:center;
 overflow:hidden;
 }
 
-/* Slides FIXED */
+/* Slide Container */
 .slide{
 display:none;
 height:100vh;
@@ -23,9 +23,7 @@ align-items:center;
 flex-direction:column;
 animation:fade 1s;
 }
-.slide.active{
-display:flex;
-}
+.slide.active{display:flex;}
 
 @keyframes fade{from{opacity:0;}to{opacity:1;}}
 
@@ -33,17 +31,18 @@ display:flex;
 .card{
 background:rgba(255,255,255,0.15);
 padding:35px;
-border-radius:20px;
-backdrop-filter:blur(10px);
+border-radius:18px;
+backdrop-filter:blur(8px);
 width:85%;
 max-width:500px;
-box-shadow:0 0 30px rgba(255,255,255,0.2);
+box-shadow:0 0 25px rgba(255,255,255,0.2);
 }
 
 /* Text */
 h1{font-size:36px;margin-bottom:15px;}
 p{font-size:20px;line-height:1.6;}
 
+/* Button */
 .btn{
 margin-top:20px;
 padding:10px 25px;
@@ -51,18 +50,13 @@ border:none;
 border-radius:20px;
 background:white;
 color:#ff4d6d;
-font-size:16px;
+font-size:17px;
 cursor:pointer;
 }
 
 /* Glow */
-.glow{
-animation:glow 2s infinite alternate;
-}
-@keyframes glow{
-from{text-shadow:0 0 10px white;}
-to{text-shadow:0 0 35px pink;}
-}
+.glow{animation:glow 2s infinite alternate;}
+@keyframes glow{from{text-shadow:0 0 10px white;}to{text-shadow:0 0 35px pink;}
 
 /* Hearts */
 .heart{
@@ -71,21 +65,15 @@ bottom:-20px;
 font-size:20px;
 animation:float 6s linear infinite;
 }
-@keyframes float{
-0%{transform:translateY(0);}
-100%{transform:translateY(-110vh);}
-}
+@keyframes float{0%{transform:translateY(0);}100%{transform:translateY(-110vh);}}
 
 /* Fireworks */
 .firework{
 position:absolute;
 font-size:30px;
-animation:boom 1s ease-out;
+animation:boom 1.2s ease-out;
 }
-@keyframes boom{
-0%{transform:scale(0);}
-100%{transform:scale(2);opacity:0;}
-}
+@keyframes boom{0%{transform:scale(0);}100%{transform:scale(2);opacity:0;}
 
 /* Cake */
 .cake{font-size:100px;cursor:pointer;}
@@ -96,9 +84,9 @@ animation:boom 1s ease-out;
 
 <body>
 
-<!-- 🎶 Tum Se Hi Song -->
+<!-- 🎶 Kesariya Song (start near main part ~55s) -->
 <iframe width="0" height="0"
-src="https://www.youtube.com/embed/mt9xg0mmt28?autoplay=1&loop=1&playlist=mt9xg0mmt28"
+src="https://www.youtube.com/embed/BddP6PYo2gs?autoplay=1&start=55&loop=1&playlist=BddP6PYo2gs"
 frameborder="0" allow="autoplay"></iframe>
 
 <!-- Slides -->
@@ -176,7 +164,6 @@ frameborder="0" allow="autoplay"></iframe>
 /* Slides */
 let slides=document.querySelectorAll(".slide");
 let index=0;
-
 function next(){
 slides[index].classList.remove("active");
 index++;
@@ -186,12 +173,11 @@ startTyping(index);
 }
 }
 
-/* Typing */
+/* Typing effect */
 function typeText(id,text){
 let el=document.getElementById(id);
 if(!el) return;
-let i=0;
-el.innerHTML="";
+let i=0;el.innerHTML="";
 let interval=setInterval(()=>{
 el.innerHTML+=text.charAt(i);
 i++;
@@ -203,9 +189,9 @@ if(i>=text.length) clearInterval(interval);
 let texts=[
 "From the moment you came into my life… everything became more beautiful ❤️",
 
-"You are not just special… you are my happiness, my peace, my everything 💖",
+"You are not just special… you are my happiness, my peace, and my home 💖",
 
-"In your smile, I see my world… in your eyes, I see my forever 🌍",
+"In your smile I see the sunrise… in your eyes I see my forever 🌄",
 
 "", "",
 
@@ -213,13 +199,13 @@ let texts=[
 
 "I promise to always respect you, care for you, and stand beside you no matter what 💍",
 
-"You are the best thing that has ever happened to me ❤️",
+"You are the best chapter of my story ❤️",
 
-"No matter what happens… I will always choose you, again and again 💖",
+"No matter what happens… I will always choose you 💖",
 
-"I promise I will never leave your side… no matter how tough life gets ❤️",
+"I promise I will never leave your side… no matter how hard it gets ❤️",
 
-"I will always be there for you… whenever you need me, in every moment, forever 🫂❤️",
+"I will always be there… whenever you need me… through every moment 🫂❤️",
 
 "I LOVE YOU VAIDEHI ❤️\nForever… endlessly… always yours ♾️"
 ];
@@ -247,15 +233,15 @@ f.innerHTML="✨";
 f.style.left=Math.random()*100+"vw";
 f.style.top=Math.random()*80+"vh";
 document.body.appendChild(f);
-setTimeout(()=>f.remove(),1000);
+setTimeout(()=>f.remove(),1200);
 },400);
 
-/* Candles */
+/* Candle interaction */
 document.getElementById("candles").onclick=function(){
 this.innerHTML="💨";
 }
 
-/* Cake */
+/* Cake interaction */
 document.getElementById("cake").onclick=function(){
 document.getElementById("slice").classList.add("show");
 }
