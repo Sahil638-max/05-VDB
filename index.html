@@ -7,44 +7,68 @@
 <style>
 body{
 margin:0;
-font-family:Segoe UI,sans-serif;
-background:linear-gradient(120deg,#ff4d6d,#ff758c,#ff7eb3);
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#ff4d6d,#ff758c,#ff7eb3);
 color:white;
 text-align:center;
 overflow:hidden;
 }
 
-.slide{display:none;height:100vh;padding-top:60px;animation:fade 1s;}
-.active{display:block;}
+/* Slide */
+.slide{
+display:none;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+animation:fade 1s;
+}
+.active{display:flex;}
 
 @keyframes fade{from{opacity:0;}to{opacity:1;}}
 
-h1{font-size:42px;}
-p{font-size:22px;width:75%;margin:auto;min-height:80px;}
+/* Glass Card */
+.card{
+background:rgba(255,255,255,0.15);
+padding:40px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+width:80%;
+max-width:500px;
+box-shadow:0 0 30px rgba(255,255,255,0.2);
+}
 
+/* Text */
+h1{font-size:38px;margin-bottom:20px;}
+p{font-size:20px;line-height:1.6;}
+
+/* Button */
 .btn{
-margin-top:30px;
-padding:12px 25px;
+margin-top:25px;
+padding:10px 25px;
 border:none;
-border-radius:25px;
+border-radius:20px;
 background:white;
 color:#ff4d6d;
-font-size:18px;
+font-size:16px;
 cursor:pointer;
 }
 
+/* Glow */
 .glow{
 animation:glow 2s infinite alternate;
 }
 @keyframes glow{
 from{text-shadow:0 0 10px white;}
-to{text-shadow:0 0 40px pink;}
+to{text-shadow:0 0 35px pink;}
 }
 
+/* Hearts */
 .heart{
 position:absolute;
 bottom:-20px;
-font-size:22px;
+font-size:20px;
 animation:float 6s linear infinite;
 }
 @keyframes float{
@@ -52,25 +76,27 @@ animation:float 6s linear infinite;
 100%{transform:translateY(-110vh);}
 }
 
+/* Fireworks */
 .firework{
 position:absolute;
-font-size:35px;
-animation:boom 1.2s ease-out;
+font-size:30px;
+animation:boom 1s ease-out;
 }
 @keyframes boom{
 0%{transform:scale(0);}
 100%{transform:scale(2);opacity:0;}
 }
 
-.cake{font-size:120px;cursor:pointer;}
-.slice{display:none;font-size:100px;}
+/* Cake */
+.cake{font-size:100px;cursor:pointer;}
+.slice{display:none;font-size:80px;}
 .show{display:block;}
 </style>
 </head>
 
 <body>
 
-<!-- 🎶 Tum Se Hi Song -->
+<!-- 🎶 Tum Se Hi Din Hota Hai -->
 <iframe width="0" height="0"
 src="https://www.youtube.com/embed/mt9xg0mmt28?autoplay=1&loop=1&playlist=mt9xg0mmt28"
 frameborder="0" allow="autoplay"></iframe>
@@ -78,75 +104,78 @@ frameborder="0" allow="autoplay"></iframe>
 <!-- Slides -->
 
 <div class="slide active">
+<div class="card">
 <h1 class="glow">Hey Vaidehi ❤️</h1>
 <p id="text1"></p>
 <button class="btn" onclick="next()">Next ➜</button>
 </div>
+</div>
 
-<div class="slide">
+<div class="slide"><div class="card">
 <h1>You Are My Heart 💖</h1>
 <p id="text2"></p>
 <button class="btn" onclick="next()">Next ➜</button>
-</div>
+</div></div>
 
-<div class="slide">
+<div class="slide"><div class="card">
 <h1>My World 🌍</h1>
 <p id="text3"></p>
 <button class="btn" onclick="next()">Next ➜</button>
-</div>
+</div></div>
 
-<div class="slide">
+<div class="slide"><div class="card">
 <h1>Make a Wish 🕯️</h1>
-<p>Close your eyes… and feel my love ❤️</p>
-<div id="candles" style="font-size:50px;cursor:pointer;">🕯️🕯️🕯️</div>
+<p>Close your eyes and feel my love ❤️</p>
+<div id="candles" style="font-size:40px;cursor:pointer;">🕯️🕯️🕯️</div>
 <button class="btn" onclick="next()">Next ➜</button>
-</div>
+</div></div>
 
-<div class="slide">
+<div class="slide"><div class="card">
 <h1>Cut the Cake 🎂</h1>
-<p>Celebrate our love ❤️</p>
+<p>Celebrate this beautiful day ❤️</p>
 <div id="cake" class="cake">🎂</div>
 <div id="slice" class="slice">🍰</div>
 <button class="btn" onclick="next()">Next ➜</button>
-</div>
+</div></div>
 
-<div class="slide">
+<div class="slide"><div class="card">
 <h1>Our Moments 💞</h1>
 <p id="text6"></p>
 <button class="btn" onclick="next()">Next ➜</button>
-</div>
+</div></div>
 
-<div class="slide">
+<div class="slide"><div class="card">
 <h1>My Promises 💍</h1>
 <p id="text7"></p>
 <button class="btn" onclick="next()">Next ➜</button>
-</div>
+</div></div>
 
-<div class="slide">
+<div class="slide"><div class="card">
 <h1>For You ❤️</h1>
 <p id="text8"></p>
 <button class="btn" onclick="next()">Next ➜</button>
-</div>
+</div></div>
 
-<div class="slide">
+<div class="slide"><div class="card">
 <h1>Forever Promise 💖</h1>
 <p id="text9"></p>
 <button class="btn" onclick="next()">Next ➜</button>
-</div>
+</div></div>
 
-<div class="slide">
+<div class="slide"><div class="card">
 <h1>Always There 🫂</h1>
 <p id="text10"></p>
 <button class="btn" onclick="next()">Next ➜</button>
-</div>
+</div></div>
 
-<div class="slide">
+<div class="slide"><div class="card">
 <h1 class="glow">I Love You ❤️</h1>
 <p id="text11"></p>
-</div>
+</div></div>
 
 <script>
 
+/* Slides */
 let slides=document.querySelectorAll(".slide");
 let index=0;
 
@@ -168,32 +197,32 @@ let interval=setInterval(()=>{
 el.innerHTML+=text.charAt(i);
 i++;
 if(i>=text.length) clearInterval(interval);
-},40);
+},35);
 }
 
-/* Messages */
+/* Messages (more emotional) */
 let texts=[
-"You came into my life like a beautiful song… and now every heartbeat feels like your name ❤️",
+"From the moment you came into my life… everything started feeling more beautiful ❤️",
 
-"I don’t need the whole world… because you are my world 💖",
+"You are not just special… you are my happiness, my peace, my everything 💖",
 
-"In your eyes, I found my home… in your smile, I found my forever 🌍",
+"In your smile, I see my world… in your eyes, I see my forever 🌍",
 
 "", "",
 
-"I imagine us… laughing, eating pizza 🍕, sharing waffles 🧇, creating endless memories 💞",
+"I imagine us together… laughing, eating pizza 🍕, sharing waffles 🧇… living a life full of love 💞",
 
-"I promise to stand beside you… in your good days and your worst days… forever 💍❤️",
+"I promise to always respect you, care for you, and stand beside you no matter what 💍",
 
-"You are not just someone I love… you are someone I never want to lose ❤️",
+"You are the best thing that has ever happened to me ❤️",
 
-"No matter where life takes us… my heart will always find its way back to you 💖",
+"No matter what happens… I will always choose you, again and again 💖",
 
-"I promise I will always support you, respect you, and love you more with every passing day ❤️",
+"I promise I will never leave your side… no matter how tough life gets ❤️",
 
-"I will always be there for you… whenever you need me, in every moment, in every situation 🫂❤️",
+"I will always be there for you… whenever you need me, in every moment, forever 🫂❤️",
 
-"I LOVE YOU VAIDEHI ❤️\nForever… endlessly… and unconditionally ♾️"
+"I LOVE YOU VAIDEHI ❤️\nForever… endlessly… always yours ♾️"
 ];
 
 function startTyping(i){
@@ -215,17 +244,17 @@ setTimeout(()=>h.remove(),6000);
 setInterval(()=>{
 let f=document.createElement("div");
 f.className="firework";
-f.innerHTML="🎆";
+f.innerHTML="✨";
 f.style.left=Math.random()*100+"vw";
 f.style.top=Math.random()*80+"vh";
 document.body.appendChild(f);
-setTimeout(()=>f.remove(),1200);
-},500);
+setTimeout(()=>f.remove(),1000);
+},400);
 
 /* Candles */
 document.getElementById("candles").onclick=function(){
 this.innerHTML="💨";
-alert("Your wish will come true ❤️");
+alert("Make a wish ❤️");
 }
 
 /* Cake */
