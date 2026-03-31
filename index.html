@@ -14,38 +14,38 @@ text-align:center;
 overflow:hidden;
 }
 
-/* Slide */
+/* Slides FIXED */
 .slide{
 display:none;
 height:100vh;
-display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
 animation:fade 1s;
 }
-.active{display:flex;}
+.slide.active{
+display:flex;
+}
 
 @keyframes fade{from{opacity:0;}to{opacity:1;}}
 
-/* Glass Card */
+/* Card */
 .card{
 background:rgba(255,255,255,0.15);
-padding:40px;
+padding:35px;
 border-radius:20px;
 backdrop-filter:blur(10px);
-width:80%;
+width:85%;
 max-width:500px;
 box-shadow:0 0 30px rgba(255,255,255,0.2);
 }
 
 /* Text */
-h1{font-size:38px;margin-bottom:20px;}
+h1{font-size:36px;margin-bottom:15px;}
 p{font-size:20px;line-height:1.6;}
 
-/* Button */
 .btn{
-margin-top:25px;
+margin-top:20px;
 padding:10px 25px;
 border:none;
 border-radius:20px;
@@ -96,20 +96,18 @@ animation:boom 1s ease-out;
 
 <body>
 
-<!-- 🎶 Tum Se Hi Din Hota Hai -->
+<!-- 🎶 Tum Se Hi Song -->
 <iframe width="0" height="0"
 src="https://www.youtube.com/embed/mt9xg0mmt28?autoplay=1&loop=1&playlist=mt9xg0mmt28"
 frameborder="0" allow="autoplay"></iframe>
 
 <!-- Slides -->
 
-<div class="slide active">
-<div class="card">
+<div class="slide active"><div class="card">
 <h1 class="glow">Hey Vaidehi ❤️</h1>
 <p id="text1"></p>
 <button class="btn" onclick="next()">Next ➜</button>
-</div>
-</div>
+</div></div>
 
 <div class="slide"><div class="card">
 <h1>You Are My Heart 💖</h1>
@@ -192,7 +190,8 @@ startTyping(index);
 function typeText(id,text){
 let el=document.getElementById(id);
 if(!el) return;
-let i=0;el.innerHTML="";
+let i=0;
+el.innerHTML="";
 let interval=setInterval(()=>{
 el.innerHTML+=text.charAt(i);
 i++;
@@ -200,9 +199,9 @@ if(i>=text.length) clearInterval(interval);
 },35);
 }
 
-/* Messages (more emotional) */
+/* Messages */
 let texts=[
-"From the moment you came into my life… everything started feeling more beautiful ❤️",
+"From the moment you came into my life… everything became more beautiful ❤️",
 
 "You are not just special… you are my happiness, my peace, my everything 💖",
 
@@ -254,7 +253,6 @@ setTimeout(()=>f.remove(),1000);
 /* Candles */
 document.getElementById("candles").onclick=function(){
 this.innerHTML="💨";
-alert("Make a wish ❤️");
 }
 
 /* Cake */
