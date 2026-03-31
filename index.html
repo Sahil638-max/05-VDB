@@ -8,7 +8,7 @@
 body{
 margin:0;
 font-family:Segoe UI,sans-serif;
-background:linear-gradient(120deg,#ff758c,#ff7eb3,#ff4d6d);
+background:linear-gradient(120deg,#ff4d6d,#ff758c,#ff7eb3);
 color:white;
 text-align:center;
 overflow:hidden;
@@ -16,10 +16,11 @@ overflow:hidden;
 
 .slide{display:none;height:100vh;padding-top:60px;animation:fade 1s;}
 .active{display:block;}
+
 @keyframes fade{from{opacity:0;}to{opacity:1;}}
 
 h1{font-size:42px;}
-p{font-size:22px;width:70%;margin:auto;min-height:70px;}
+p{font-size:22px;width:75%;margin:auto;min-height:80px;}
 
 .btn{
 margin-top:30px;
@@ -32,12 +33,18 @@ font-size:18px;
 cursor:pointer;
 }
 
-.emoji{font-size:85px;margin-top:20px;}
+.glow{
+animation:glow 2s infinite alternate;
+}
+@keyframes glow{
+from{text-shadow:0 0 10px white;}
+to{text-shadow:0 0 40px pink;}
+}
 
 .heart{
 position:absolute;
 bottom:-20px;
-font-size:20px;
+font-size:22px;
 animation:float 6s linear infinite;
 }
 @keyframes float{
@@ -45,103 +52,97 @@ animation:float 6s linear infinite;
 100%{transform:translateY(-110vh);}
 }
 
-.glow{
-animation:glow 1.5s infinite alternate;
-}
-@keyframes glow{
-from{text-shadow:0 0 10px white;}
-to{text-shadow:0 0 30px yellow;}
-}
-
-/* Fireworks */
 .firework{
 position:absolute;
 font-size:35px;
-animation:boom 1s ease-out;
+animation:boom 1.2s ease-out;
 }
 @keyframes boom{
 0%{transform:scale(0);}
-100%{transform:scale(1.5);opacity:0;}
+100%{transform:scale(2);opacity:0;}
 }
 
-/* Cake */
 .cake{font-size:120px;cursor:pointer;}
 .slice{display:none;font-size:100px;}
 .show{display:block;}
-
 </style>
 </head>
 
 <body>
 
-<!-- Romantic Music -->
-<audio id="bgMusic" autoplay loop>
-<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">
-</audio>
-<button class="btn" onclick="toggleMusic()">🎵 Music</button>
+<!-- 🎶 Bollywood Romantic Song -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/Umqb9KENgmk?autoplay=1&loop=1&playlist=Umqb9KENgmk"
+frameborder="0" allow="autoplay"></iframe>
 
-<!-- Slide 1 -->
+<!-- Slides -->
+
 <div class="slide active">
 <h1 class="glow">Hey Vaidehi ❤️</h1>
 <p id="text1"></p>
-<div class="emoji">✨💖</div>
 <button class="btn" onclick="next()">Next ➜</button>
 </div>
 
-<!-- Slide 2 -->
 <div class="slide">
-<h1>You Are My Everything 💞</h1>
+<h1>You Are My Heart 💖</h1>
 <p id="text2"></p>
-<div class="emoji">😊💖</div>
 <button class="btn" onclick="next()">Next ➜</button>
 </div>
 
-<!-- Slide 3 -->
 <div class="slide">
-<h1>My Favorite Person 🌍</h1>
+<h1>My World 🌍</h1>
 <p id="text3"></p>
-<div class="emoji">🌍❤️</div>
 <button class="btn" onclick="next()">Next ➜</button>
 </div>
 
-<!-- Slide 4 Candles -->
 <div class="slide">
 <h1>Make a Wish 🕯️</h1>
-<p>Click to blow candles 💨</p>
-<div id="candles" class="emoji">🕯️🕯️🕯️</div>
+<p>Close your eyes… and feel my love ❤️</p>
+<div id="candles" style="font-size:50px;cursor:pointer;">🕯️🕯️🕯️</div>
 <button class="btn" onclick="next()">Next ➜</button>
 </div>
 
-<!-- Slide 5 Cake -->
 <div class="slide">
 <h1>Cut the Cake 🎂</h1>
-<p>Click the cake ❤️</p>
+<p>Celebrate our love ❤️</p>
 <div id="cake" class="cake">🎂</div>
 <div id="slice" class="slice">🍰</div>
 <button class="btn" onclick="next()">Next ➜</button>
 </div>
 
-<!-- Slide 6 Memories -->
 <div class="slide">
-<h1>Us Together 💕</h1>
+<h1>Our Moments 💞</h1>
 <p id="text6"></p>
-<div class="emoji">🍕🧇💞</div>
 <button class="btn" onclick="next()">Next ➜</button>
 </div>
 
-<!-- Slide 7 Promises -->
 <div class="slide">
 <h1>My Promises 💍</h1>
 <p id="text7"></p>
-<div class="emoji">🤞❤️</div>
 <button class="btn" onclick="next()">Next ➜</button>
 </div>
 
-<!-- Slide 8 Final -->
 <div class="slide">
-<h1 class="glow">Forever Yours ❤️</h1>
+<h1>For You ❤️</h1>
 <p id="text8"></p>
-<div class="emoji">💖♾️</div>
+<button class="btn" onclick="next()">Next ➜</button>
+</div>
+
+<div class="slide">
+<h1>Forever Promise 💖</h1>
+<p id="text9"></p>
+<button class="btn" onclick="next()">Next ➜</button>
+</div>
+
+<div class="slide">
+<h1>Always There 🫂</h1>
+<p id="text10"></p>
+<button class="btn" onclick="next()">Next ➜</button>
+</div>
+
+<div class="slide">
+<h1 class="glow">I Love You ❤️</h1>
+<p id="text11"></p>
 </div>
 
 <script>
@@ -155,13 +156,13 @@ index++;
 if(index<slides.length){
 slides[index].classList.add("active");
 startTyping(index);
-if(index>=4) startFireworks();
 }
 }
 
-/* Typing */
+/* Typing effect */
 function typeText(id,text){
 let el=document.getElementById(id);
+if(!el) return;
 let i=0;el.innerHTML="";
 let interval=setInterval(()=>{
 el.innerHTML+=text.charAt(i);
@@ -170,16 +171,29 @@ if(i>=text.length) clearInterval(interval);
 },40);
 }
 
-/* Messages */
+/* Romantic Messages */
 let texts=[
-"Today is the day my favorite person came into this world… and my life became beautiful because of you ❤️",
-"You are not just special… you are my happiness, my peace, my home 💖",
-"Every moment with you feels like a dream I never want to wake up from 🌍❤️",
-"",
-"",
-"Imagine us together… eating pizza 🍕, waffles 🧇, laughing endlessly 💞",
-"I promise to stay with you, support you, love you in every moment… no matter what 💍❤️",
-"I LOVE YOU VAIDEHI ❤️\nForever and always… ♾️"
+"You came into my life like a beautiful song… and now every heartbeat feels like your name ❤️",
+
+"I don’t need the whole world… because you are my world 💖",
+
+"In your eyes, I found my home… in your smile, I found my forever 🌍",
+
+"", "",
+
+"I imagine us… laughing, eating pizza 🍕, sharing waffles 🧇, creating endless memories 💞",
+
+"I promise to stand beside you… in your good days and your worst days… forever 💍❤️",
+
+"You are not just someone I love… you are someone I never want to lose ❤️",
+
+"No matter where life takes us… my heart will always find its way back to you 💖",
+
+"I promise I will always support you, respect you, and love you more with every passing day ❤️",
+
+"I will always be there for you… whenever you need me, in every moment, in every situation 🫂❤️",
+
+"I LOVE YOU VAIDEHI ❤️\nForever… endlessly… and unconditionally ♾️"
 ];
 
 function startTyping(i){
@@ -191,45 +205,35 @@ startTyping(0);
 setInterval(()=>{
 let h=document.createElement("div");
 h.className="heart";
-h.innerHTML="💖 Vaidehi 💖";
+h.innerHTML="💖";
 h.style.left=Math.random()*100+"vw";
 document.body.appendChild(h);
 setTimeout(()=>h.remove(),6000);
-},400);
-
-/* Candles */
-document.getElementById("candles").onclick=function(){
-this.innerHTML="💨";
-alert("Wish made ❤️");
-}
-
-/* Cake */
-document.getElementById("cake").onclick=function(){
-document.getElementById("slice").classList.add("show");
-for(let i=0;i<20;i++) createFirework();
-}
+},300);
 
 /* Fireworks */
-function createFirework(){
+setInterval(()=>{
 let f=document.createElement("div");
 f.className="firework";
 f.innerHTML="🎆";
 f.style.left=Math.random()*100+"vw";
 f.style.top=Math.random()*80+"vh";
 document.body.appendChild(f);
-setTimeout(()=>f.remove(),1000);
+setTimeout(()=>f.remove(),1200);
+},500);
+
+/* Candles */
+document.getElementById("candles").onclick=function(){
+this.innerHTML="💨";
+alert("Your wish will come true ❤️");
 }
 
-function startFireworks(){
-setInterval(createFirework,300);
-}
-
-/* Music */
-function toggleMusic(){
-let m=document.getElementById("bgMusic");
-m.paused?m.play():m.pause();
+/* Cake */
+document.getElementById("cake").onclick=function(){
+document.getElementById("slice").classList.add("show");
 }
 
 </script>
+
 </body>
 </html>
