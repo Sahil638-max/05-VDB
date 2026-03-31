@@ -1,96 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF‑8">
+<meta charset="UTF-8">
 <title>For Vaidehi ❤️</title>
-
 <style>
 body{
-margin:0;
-font-family:'Segoe UI',sans-serif;
-background:linear-gradient(135deg,#ff4d6d,#ff758c,#ff7eb3);
-color:white;
-text-align:center;
-overflow:hidden;
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#ff4d6d,#ff758c,#ff7eb3);
+  color:white;
+  overflow:hidden;
+  text-align:center;
 }
 
-/* Slide Container */
+/* Slides */
 .slide{
-display:none;
-height:100vh;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-animation:fade 1s;
+  display:none;
+  height:100vh;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  animation:fade 1s;
 }
 .slide.active{display:flex;}
-
 @keyframes fade{from{opacity:0;}to{opacity:1;}}
 
 /* Card */
 .card{
-background:rgba(255,255,255,0.15);
-padding:35px;
-border-radius:18px;
-backdrop-filter:blur(8px);
-width:85%;
-max-width:500px;
-box-shadow:0 0 25px rgba(255,255,255,0.2);
+  background:rgba(255,255,255,0.12);
+  padding:40px;
+  border-radius:25px;
+  backdrop-filter:blur(12px);
+  width:80%;
+  max-width:550px;
+  box-shadow:0 0 40px rgba(255,255,255,0.2);
+  transform:scale(0.95);
+  animation:cardIn 0.6s forwards;
 }
+@keyframes cardIn{from{transform:scale(0.7);opacity:0;}to{transform:scale(1);opacity:1;}}
 
 /* Text */
-h1{font-size:36px;margin-bottom:15px;}
+h1{font-size:40px;margin-bottom:15px; text-shadow:0 0 15px #fff;}
 p{font-size:20px;line-height:1.6;}
 
 /* Button */
 .btn{
-margin-top:20px;
-padding:10px 25px;
-border:none;
-border-radius:20px;
-background:white;
-color:#ff4d6d;
-font-size:17px;
-cursor:pointer;
+  margin-top:20px;
+  padding:12px 28px;
+  border:none;
+  border-radius:25px;
+  background:white;
+  color:#ff4d6d;
+  font-size:17px;
+  cursor:pointer;
+  transition:0.3s;
 }
+.btn:hover{transform:scale(1.1);}
 
 /* Glow */
 .glow{animation:glow 2s infinite alternate;}
-@keyframes glow{from{text-shadow:0 0 10px white;}to{text-shadow:0 0 35px pink;}
+@keyframes glow{
+  from{text-shadow:0 0 10px white;}
+  to{text-shadow:0 0 45px pink;}
+}
 
 /* Hearts */
 .heart{
-position:absolute;
-bottom:-20px;
-font-size:20px;
-animation:float 6s linear infinite;
+  position:absolute;
+  bottom:-20px;
+  font-size:20px;
+  animation:float 6s linear infinite;
 }
-@keyframes float{0%{transform:translateY(0);}100%{transform:translateY(-110vh);}}
+@keyframes float{
+  0%{transform:translateY(0);}
+  100%{transform:translateY(-120vh);}
+}
 
 /* Fireworks */
 .firework{
-position:absolute;
-font-size:30px;
-animation:boom 1.2s ease-out;
+  position:absolute;
+  font-size:35px;
+  animation:boom 1.2s ease-out;
 }
-@keyframes boom{0%{transform:scale(0);}100%{transform:scale(2);opacity:0;}
+@keyframes boom{
+  0%{transform:scale(0);}
+  50%{transform:scale(1.5);}
+  100%{transform:scale(2);opacity:0;}
+}
 
-/* Cake */
-.cake{font-size:100px;cursor:pointer;}
-.slice{display:none;font-size:80px;}
+/* Cake & Candle */
+.cake{font-size:120px;cursor:pointer;transition:0.5s;}
+.cake.cut{transform:scale(1.2) rotate(-10deg);}
+.slice{display:none;font-size:100px;}
 .show{display:block;}
+
+/* Pizza & Waffle bounce */
+.food{font-size:60px;animation:bounce 1s infinite alternate;}
+@keyframes bounce{0%{transform:translateY(0);}100%{transform:translateY(-20px);}}
 </style>
 </head>
 
 <body>
 
-<!-- 🎶 Kesariya Song (start near main part ~55s) -->
-<iframe width="0" height="0"
+<!-- Kesariya Song main part -->
+<iframe width="0" height="0" 
 src="https://www.youtube.com/embed/BddP6PYo2gs?autoplay=1&start=55&loop=1&playlist=BddP6PYo2gs"
 frameborder="0" allow="autoplay"></iframe>
 
 <!-- Slides -->
-
 <div class="slide active"><div class="card">
 <h1 class="glow">Hey Vaidehi ❤️</h1>
 <p id="text1"></p>
@@ -111,40 +128,29 @@ frameborder="0" allow="autoplay"></iframe>
 
 <div class="slide"><div class="card">
 <h1>Make a Wish 🕯️</h1>
-<p>Close your eyes and feel my love ❤️</p>
-<div id="candles" style="font-size:40px;cursor:pointer;">🕯️🕯️🕯️</div>
+<p>Click the candles to make a wish ❤️</p>
+<div id="candles" style="font-size:50px;cursor:pointer;">🕯️🕯️🕯️</div>
 <button class="btn" onclick="next()">Next ➜</button>
 </div></div>
 
 <div class="slide"><div class="card">
 <h1>Cut the Cake 🎂</h1>
-<p>Celebrate this beautiful day ❤️</p>
+<p>Click the cake to celebrate ❤️</p>
 <div id="cake" class="cake">🎂</div>
 <div id="slice" class="slice">🍰</div>
 <button class="btn" onclick="next()">Next ➜</button>
 </div></div>
 
 <div class="slide"><div class="card">
-<h1>Our Moments 💞</h1>
-<p id="text6"></p>
+<h1>Pizza & Waffles 🍕🧇</h1>
+<p>Our favorite treats together 💞</p>
+<div class="food">🍕🧇💖</div>
 <button class="btn" onclick="next()">Next ➜</button>
 </div></div>
 
 <div class="slide"><div class="card">
 <h1>My Promises 💍</h1>
 <p id="text7"></p>
-<button class="btn" onclick="next()">Next ➜</button>
-</div></div>
-
-<div class="slide"><div class="card">
-<h1>For You ❤️</h1>
-<p id="text8"></p>
-<button class="btn" onclick="next()">Next ➜</button>
-</div></div>
-
-<div class="slide"><div class="card">
-<h1>Forever Promise 💖</h1>
-<p id="text9"></p>
 <button class="btn" onclick="next()">Next ➜</button>
 </div></div>
 
@@ -160,92 +166,91 @@ frameborder="0" allow="autoplay"></iframe>
 </div></div>
 
 <script>
-
-/* Slides */
 let slides=document.querySelectorAll(".slide");
 let index=0;
 function next(){
-slides[index].classList.remove("active");
-index++;
-if(index<slides.length){
-slides[index].classList.add("active");
-startTyping(index);
-}
+  slides[index].classList.remove("active");
+  index++;
+  if(index<slides.length){
+    slides[index].classList.add("active");
+    startTyping(index);
+  }
 }
 
-/* Typing effect */
 function typeText(id,text){
-let el=document.getElementById(id);
-if(!el) return;
-let i=0;el.innerHTML="";
-let interval=setInterval(()=>{
-el.innerHTML+=text.charAt(i);
-i++;
-if(i>=text.length) clearInterval(interval);
-},35);
+  let el=document.getElementById(id);
+  if(!el) return;
+  let i=0; el.innerHTML="";
+  let interval=setInterval(()=>{
+    el.innerHTML+=text.charAt(i);
+    i++;
+    if(i>=text.length) clearInterval(interval);
+  },35);
 }
 
 /* Messages */
 let texts=[
-"From the moment you came into my life… everything became more beautiful ❤️",
-
-"You are not just special… you are my happiness, my peace, and my home 💖",
-
+"From the moment you came into my life… everything became brighter ❤️",
+"You are my happiness, my peace, my home 💖",
 "In your smile I see the sunrise… in your eyes I see my forever 🌄",
-
 "", "",
-
-"I imagine us together… laughing, eating pizza 🍕, sharing waffles 🧇… living a life full of love 💞",
-
-"I promise to always respect you, care for you, and stand beside you no matter what 💍",
-
-"You are the best chapter of my story ❤️",
-
-"No matter what happens… I will always choose you 💖",
-
-"I promise I will never leave your side… no matter how hard it gets ❤️",
-
-"I will always be there… whenever you need me… through every moment 🫂❤️",
-
-"I LOVE YOU VAIDEHI ❤️\nForever… endlessly… always yours ♾️"
+"", "", // candle slide text empty
+"", "", // cake slide text empty
+"Our favorite treats together… pizza 🍕 and waffles 🧇… life is sweet 💞",
+"I promise to always be there for you, support you and love you 💍",
+"I will always be present whenever you need me 🫂❤️",
+"I LOVE YOU VAIDEHI ❤️ Forever… always yours ♾️"
 ];
 
-function startTyping(i){
-if(texts[i]) typeText("text"+(i+1),texts[i]);
-}
+function startTyping(i){ if(texts[i]) typeText("text"+(i+1),texts[i]); }
 startTyping(0);
 
-/* Hearts */
+/* Hearts floating */
 setInterval(()=>{
-let h=document.createElement("div");
-h.className="heart";
-h.innerHTML="💖";
-h.style.left=Math.random()*100+"vw";
-document.body.appendChild(h);
-setTimeout(()=>h.remove(),6000);
+  let h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="💖";
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=15+Math.random()*15+"px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),7000);
 },300);
 
-/* Fireworks */
+/* Fireworks sparkle */
 setInterval(()=>{
-let f=document.createElement("div");
-f.className="firework";
-f.innerHTML="✨";
-f.style.left=Math.random()*100+"vw";
-f.style.top=Math.random()*80+"vh";
-document.body.appendChild(f);
-setTimeout(()=>f.remove(),1200);
+  let f=document.createElement("div");
+  f.className="firework";
+  f.innerHTML="✨";
+  f.style.left=Math.random()*100+"vw";
+  f.style.top=Math.random()*80+"vh";
+  f.style.color=["#FFD700","#FF69B4","#00FFFF","#FF4500"][Math.floor(Math.random()*4)];
+  document.body.appendChild(f);
+  setTimeout(()=>f.remove(),1200);
 },400);
 
-/* Candle interaction */
+/* Candles click */
 document.getElementById("candles").onclick=function(){
-this.innerHTML="💨";
+  this.innerHTML="💨";
+  alert("Make a wish Vaidehi ❤️");
 }
 
-/* Cake interaction */
+/* Cake click */
 document.getElementById("cake").onclick=function(){
-document.getElementById("slice").classList.add("show");
+  this.classList.add("cut");
+  document.getElementById("slice").classList.add("show");
+  for(let i=0;i<20;i++){ createFirework(); }
+  setTimeout(()=>{ alert("Cake Cut! Happy Birthday Vaidehi ❤️"); },700);
 }
 
+function createFirework(){
+  let f=document.createElement("div");
+  f.className="firework";
+  f.innerHTML="🎆";
+  f.style.left=Math.random()*100+"vw";
+  f.style.top=Math.random()*60+"vh";
+  document.body.appendChild(f);
+  setTimeout(()=>f.remove(),1000);
+}
 </script>
 
 </body>
